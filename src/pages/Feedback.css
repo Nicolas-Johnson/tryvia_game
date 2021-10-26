@@ -1,0 +1,40 @@
+.content-feedback {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+
+.feedback {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.feedback-text {
+  align-items: center;
+  background-color: rgba(177, 211, 255, 0.527);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15px;
+  width: 70%;
+}
+
+.feedback-text h3 {
+  margin: 10px;
+}
+
+.feedback-buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.feedback-buttons button {
+  margin: 10px;
+}

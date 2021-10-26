@@ -1,28 +1,36 @@
 .content-info {
-  border: 1px solid black;
+  align-self: center;
+  background-color: rgba(177, 211, 255, 0.527);
+  border-radius: 10px;
   display: flex;
   height: 10%;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 20px;
+  width: 70%;
+}
+
+.content-title {
+  display: flex;
+  justify-content: center;
+  width: 20%;
 }
 
 .image-title {
-  display: flex;
-  justify-content: center;
-  margin-left: 20px;
-  width: 20%;
-}
-
-.image-title img {
   align-self: center;
   border-radius: 50%;
   margin-right: 10px;
-  width: 20%;
+  width: 50%;
 }
 
-.image-title h4 {
+.content-title h3 {
   align-self: center;
 }
 
 .content-score {
   align-self: center;
+}
+
+.score-title {
+  font-size: 18px;
+  font-weight: 600;
 }

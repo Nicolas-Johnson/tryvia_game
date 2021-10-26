@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { userLogin, fetchToken } from '../redux/actions';
 import './Login.css';
 import logo from '../trivia.png';
+import image from '../images/2296268.jpg';
 
 class Login extends Component {
   constructor(props) {
@@ -52,35 +53,41 @@ class Login extends Component {
   formElement() {
     const { gravatarEmail, name } = this.state;
     return (
-      <section className="center">
-        <div className="form-login">
-          <img src={ logo } alt="logo" />
-          <label htmlFor="name">
-            Nome:
-            <input
-              type="text"
-              name="name"
-              id="name"
-              onChange={ this.handleChange }
-              value={ name }
-              placeholder="Insira seu Nome"
-              data-testid="input-player-name"
-            />
-          </label>
-          <label htmlFor="email">
-            Email:
-            <input
-              type="text"
-              name="gravatarEmail"
-              id="email"
-              onChange={ this.handleChange }
-              value={ gravatarEmail }
-              placeholder="Insira seu Email"
-              data-testid="input-gravatar-email"
-            />
-          </label>
-          { this.renderButtons() }
-        </div>
+      <section className="content-hero">
+        <img className="img-hero" src={ image } alt="logo" />
+
+        <section className="center">
+          <div className="form-login">
+            <img src={ logo } alt="logo" />
+            <label htmlFor="name" className="form-label">
+              Nome:
+              <input
+                className="form-control"
+                type="text"
+                name="name"
+                id="name"
+                onChange={ this.handleChange }
+                value={ name }
+                placeholder="Insira seu Nome"
+                data-testid="input-player-name"
+              />
+            </label>
+            <label htmlFor="email" className="form-label">
+              E-mail:
+              <input
+                className="form-control"
+                type="text"
+                name="gravatarEmail"
+                id="email"
+                onChange={ this.handleChange }
+                value={ gravatarEmail }
+                placeholder="Insira seu E-mail"
+                data-testid="input-gravatar-email"
+              />
+            </label>
+            { this.renderButtons() }
+          </div>
+        </section>
       </section>
     );
   }
@@ -96,7 +103,7 @@ class Login extends Component {
           data-testid="btn-play"
           onClick={ this.handleClick }
           disabled={ !isValid }
-          className="settings"
+          className="settings btn btn-success"
         >
           Jogar
         </button>
@@ -104,7 +111,7 @@ class Login extends Component {
           <button
             type="button"
             data-testid="btn-settings"
-            className="btn-settings"
+            className="btn-settings btn btn-dark"
           >
             Configurações
 

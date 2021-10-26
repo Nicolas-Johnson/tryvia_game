@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchQuestions } from '../redux/actions/index';
 import Header from '../components/Header/Header';
 import Questions from '../components/Questions';
+import timer from '../images/6678.jpg';
+import './Game.css';
 
 export default function Game() {
   const token = useSelector((state) => state.token.code);
@@ -13,13 +15,12 @@ export default function Game() {
   }, []);
 
   return (
-    <>
-      <Header />
-      <main>
-        <section className="content-questions">
-          {questions && <Questions />}
-        </section>
-      </main>
-    </>
+    <section className="content-game">
+      <img src={ timer } alt="timer" className="img-game" />
+      <section className="content-questions">
+        <Header />
+        {questions && <Questions />}
+      </section>
+    </section>
   );
 }

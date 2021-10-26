@@ -34,19 +34,19 @@ class Header extends Component {
   render() {
     const { gravatarImage, name, score } = this.state;
     return (
-      <header className="content-info">
-        <div className="image-title">
+      <header className="content-info shadow p-3 rounded">
+        <div className="content-title">
           <img
             src={ gravatarImage }
             alt="avatar-player"
             data-testid="header-profile-picture"
+            className="image-title"
           />
-          <h4 data-testid="header-player-name">{name}</h4>
+          <h3 data-testid="header-player-name">{name}</h3>
         </div>
         <div className="content-score">
-          Score:
-          {' '}
-          <span data-testid="header-score">
+          <span className="score-title">Score: </span>
+          <span data-testid="header-score" className="score-title">
             {score}
           </span>
         </div>

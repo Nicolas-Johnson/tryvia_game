@@ -120,20 +120,20 @@ class Questions extends Component {
     }
 
     return (
-      <section className="container">
+      <section className="container shadow p-3 rounded">
         <div className="container-question">
           <div>
-            <h1
+            <h3
               key={ questions[currentQuestion].category }
               data-testid="question-category"
             >
               { questions[currentQuestion].category }
-            </h1>
+            </h3>
           </div>
           <p data-testid="question-text">{ questions[currentQuestion].question }</p>
         </div>
-        <div>
-          <h1>
+        <div className="content-timer">
+          <h1 className="timer">
             {seconds < finalSeconds ? `0${seconds}` : seconds}
           </h1>
         </div>
@@ -147,7 +147,7 @@ class Questions extends Component {
                   answer={ answer }
                   key={ answer }
                   id="correct-answer"
-                  buttonBorderColor="6, 240, 15"
+                  buttonBorderColor="btn-outline-success"
                   handleAnswersButton={ handleAnswersButton }
                   shouldBorderColorChange={ shouldBorderColorChange }
                   difficulty={ questions[currentQuestion].difficulty }
@@ -159,7 +159,7 @@ class Questions extends Component {
                 answer={ answer }
                 key={ answer }
                 id={ `wrong-answer-${currentQIndex}` }
-                buttonBorderColor="255, 0, 0"
+                buttonBorderColor="btn-outline-danger"
                 handleAnswersButton={ handleAnswersButton }
                 shouldBorderColorChange={ shouldBorderColorChange }
                 difficulty={ questions[currentQuestion].difficulty }
@@ -172,7 +172,7 @@ class Questions extends Component {
                 type="button"
                 onClick={ this.handleNextQuestion }
                 data-testid="btn-next"
-                className="btn-next"
+                className="btn-next btn btn-secondary"
               >
                 Próxima
               </button>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './Ranking.css';
 import { Redirect } from 'react-router';
 
 class Ranking extends Component {
@@ -11,6 +13,14 @@ class Ranking extends Component {
     this.handleLocalStorage = this.handleLocalStorage.bind(this);
     this.createRankingElements = this.createRankingElements.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+
+  }
+  
+  handleClick() {
+    this.setState({ redirect: true });
   }
 
   handleLocalStorage() {
@@ -36,36 +46,54 @@ class Ranking extends Component {
 
   createRankingElements(rankingArray) {
     return rankingArray.map(({ name, score, gravatarImage }, index) => (
-      <div key={ index }>
-        <img src={ gravatarImage } alt={ name } />
-        <h3 data-testid={ `player-name-${index}` }>{ name }</h3>
-        <p data-testid={ `player-score-${index}` }>{ score }</p>
-      </div>
+      <tr key={ index }>
+        <th scope="row">{ index + 1 }</th>
+        <td>
+          <div className="ranking">
+            <img className="image-ranking" src={ gravatarImage } alt={ name } />
+            <h4 data-testid={ `player-name-${index}` }>{ name }</h4>
+          </div>
+        </td>
+        <td><p data-testid={ `player-score-${index}` }>{ score }</p></td>
+      </tr>
     ));
-  }
-
-  handleClick() {
-    this.setState({ redirect: true });
   }
 
   render() {
     const {
-      state: { redirect },
-      createRankingElements, handleLocalStorage, handleClick,
+      createRankingElements,
     } = this;
 
-    if (redirect) {
-      return <Redirect to="/" />;
-    }
-
     return (
-      <div>
-        <h1 data-testid="ranking-title">Ranking</h1>
-        { createRankingElements(handleLocalStorage()) }
-        <button type="button" onClick={ handleClick } data-testid="btn-go-home">
-          Início
-        </button>
-      </div>
+      <section className="content-ranking">
+        <div className="info-ranking">
+          <h1 data-testid="ranking-title">Ranking</h1>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Ranking</th>
+                <th scope="col">Jogador</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              { createRankingElements(this.handleLocalStorage()) }
+            </tbody>
+          </table>
+          <div className="title-ranking">
+            <Link to="/" className="btn-ranking">
+              <button
+                type="button"
+                className="btn-ranking btn btn-success"
+                data-testid="btn-go-home"
+              >
+                Início
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
     );
   }
 }

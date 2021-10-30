@@ -8,18 +8,17 @@ class Button extends Component {
         shouldBorderColorChange, buttonBorderColor, difficulty },
     } = this;
 
-    const color = shouldBorderColorChange ? buttonBorderColor : '0, 0, 0';
+    const color = shouldBorderColorChange ? buttonBorderColor : 'btn-light';
 
     return (
       <button
         type="button"
         data-testid={ id }
-        style={ { border: `3px solid rgb(${color})` } }
         onClick={ () => handleAnswersButton(answer, difficulty) }
-        className="answers"
+        className={ `answers btn ${color}` }
         disabled={ shouldBorderColorChange }
       >
-        { answer }
+        <h5>{ answer }</h5>
       </button>
     );
   }

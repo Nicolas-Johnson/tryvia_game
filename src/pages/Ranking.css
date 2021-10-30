@@ -1,0 +1,50 @@
+.content-ranking {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.info-ranking {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+
+.title-ranking {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.table {
+  height: 50%;
+  width: 50%;
+}
+
+.image-ranking {
+  border-radius: 50px;
+  margin: 10px;
+  width: 11%;
+}
+
+.ranking {
+  align-items: center;
+  display: flex;
+}
+
+tbody {
+  overflow: scroll;
+}
+
+td, th {
+  vertical-align: middle;
+}
+
+.btn-ranking {
+  align-items: center;
+}

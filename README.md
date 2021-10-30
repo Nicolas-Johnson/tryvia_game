@@ -3,7 +3,7 @@
 Projeto desenvolvido em parceria com o time... </br>
 Rodrigo Marchi Silva > [linkedin](https://www.linkedin.com/in/rodrigo-marchi-23a2031b7/) </br>
 Alexandre Fortes > [linkedin](http://linkedin.com/in/alexandremarquesf) </br>
-Luiz Gustavo > [linkedin](https://www.linkedin.com/in/luizsmatos/ )</br>
+Luiz Gustavo > [linkedin](https://www.linkedin.com/in/luizsmatos/)</br>
 Matheus Soares >[linkedin](https://www.linkedin.com/in/mateeus-soarees/) </br>
 Nicolas Johnson > [linkedin](https://www.linkedin.com/in/nicolas-johnson-279662210/) </br>
 

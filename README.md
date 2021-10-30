@@ -9,7 +9,7 @@ Nicolas Johnson > [linkedin](https://www.linkedin.com/in/nicolas-johnson-2796622
 
 Desafio do curso de FullStack Developer da TRYBE https://www.betrybe.com/
 
-[DEMO](linke)
+[DEMO](https://tranquil-woodland-23988.herokuapp.com/)
 
 ![plot](./public/images/gameScreen.png)
 

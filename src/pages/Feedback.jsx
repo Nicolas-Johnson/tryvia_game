@@ -34,10 +34,12 @@ class Feedback extends React.Component {
         <Link
           to={ {
             pathname: '/ranking',
-            userInfos: {
-              name: player.name,
-              score: player.score,
-              gravatarImage: getProfile(player.gravatarEmail),
+            state: {
+              userObject: {
+                name: player.name,
+                score: player.score,
+                gravatarImage: getProfile(player.gravatarEmail),
+              },
             },
           } }
         >

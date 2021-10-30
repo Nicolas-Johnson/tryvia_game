@@ -30,15 +30,40 @@ class Feedback extends React.Component {
   renderButton() {
     const { player } = this.state;
     return (
-      <div className="feedback-buttons">
-        <Link
-          to={ {
-            pathname: '/ranking',
-            state: {
-              userObject: {
-                name: player.name,
-                score: player.score,
-                gravatarImage: getProfile(player.gravatarEmail),
+      <>
+        <Header />
+        <div>
+          <h3 data-testid="feedback-text">
+            { !loading && player.assertions < magicNumber
+              ? 'Podia ser melhor...' : 'Mandou bem!' }
+          </h3>
+        </div>
+        <div>
+          <h3>
+            Você acertou
+            {' '}
+            <span data-testid="feedback-total-question">{player.assertions}</span>
+            {' '}
+            questões!
+          </h3>
+          <h3>
+            Um total de
+            {' '}
+            <span data-testid="feedback-total-score">{player.score}</span>
+            {' '}
+            pontos
+          </h3>
+        </div>
+        <div className="feedback-buttons">>
+          <Link
+            to={ {
+              pathname: '/ranking',
+              state: {
+                userObject: {
+                  name: player.name,
+                  score: player.score,
+                  gravatarImage: getProfile(player.gravatarEmail),
+                },
               },
             },
           } }

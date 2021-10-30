@@ -2,18 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Ranking.css';
+import { Redirect } from 'react-router';
 
 class Ranking extends Component {
   constructor(props) {
     super(props);
 
+    this.state = { redirect: false };
 
     this.handleLocalStorage = this.handleLocalStorage.bind(this);
     this.createRankingElements = this.createRankingElements.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
 
+  }
+  
+  handleClick() {
+    this.setState({ redirect: true });
   }
 
   handleLocalStorage() {
@@ -86,6 +93,7 @@ class Ranking extends Component {
           </div>
         </div>
       </section>
+
     );
   }
 }
